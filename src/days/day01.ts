@@ -1,5 +1,4 @@
 
-
 const day01 = (input: string) => {
     const fuelCost = (i: number) => Math.floor(i / 3) - 2
 
