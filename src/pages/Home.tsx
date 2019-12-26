@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Day from '../components/Day'
 import day01 from '../days/day01'
@@ -14,10 +14,10 @@ const Home: React.FC<IHomeProps> = () => (
     <>
         {
             Object.entries(days).map(([number, logic]) => (
-                <>
+                <Fragment key={number}>
                     <p>Day {number}:</p>
-                    <Day key={`day${number}`} logic={logic} />
-                </>
+                    <Day id={number} logic={logic} />
+                </Fragment>
             ))
         }
     </>

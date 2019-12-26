@@ -4,12 +4,12 @@ import Input from './Input'
 import Output from './Output';
 
 interface IDayProps {
-    key: string, // Identifier for the current day
+    id: string, // Identifier for the current day
     logic: (input: string) => { part1: string | number, part2: string | number },
 }
 
-const Day: React.FC<IDayProps> = ({ key, logic }) => {
-    const storageKey = `days.${key}`
+const Day: React.FC<IDayProps> = ({ id, logic }) => {
+    const storageKey = `day.${id}`
     const [input, setInput] = useState<string>(localStorage.getItem(storageKey) ?? "")
 
     const updateInput = (input: string) => {
@@ -18,7 +18,7 @@ const Day: React.FC<IDayProps> = ({ key, logic }) => {
     }
 
     return <>
-        <Input input={input} setInput={updateInput} />
+        <Input input={input} setInput={updateInput} id={id} />
         <Output input={input} logic={logic} />
     </>
 }
