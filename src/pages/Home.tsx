@@ -16,7 +16,7 @@ const Home: React.FC<IHomeProps> = () => (
             Object.entries(days).map(([number, logic]) => (
                 <>
                     <p>Day {number}:</p>
-                    <Day logic={logic} />
+                    <Day key={`day${number}`} logic={logic} />
                 </>
             ))
         }
